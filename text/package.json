@@ -1,0 +1,16 @@
+{
+    "name": "@matrix-org/collaborative-text",
+    "version": "0.0.0",
+    "description": "Matrix-native collaborative text editor",
+    "author": "The Matrix.org Foundation C.I.C.",
+    "license": "Apache-2.0",
+    "main": "./api/test.ts",
+    "scripts": {
+        "start": "vite"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "vite": "^2.6.1"
+    }
+}
