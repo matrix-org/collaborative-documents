@@ -32,9 +32,14 @@ const mySchema = new Schema({
     marks: schema.spec.marks
 });
 
-new EditorView(document.querySelector("#editor"), {
+const view = new EditorView(document.querySelector("#editor"), {
     state: EditorState.create({
         doc: DOMParser.fromSchema(mySchema).parse(document.querySelector("#content")),
         plugins: exampleSetup({ schema: mySchema }),
     }),
+    dispatchTransaction(transaction) {
+        console.log(transaction);
+        const newState = view.state.apply(transaction)
+        view.updateState(newState)
+    },
 });
