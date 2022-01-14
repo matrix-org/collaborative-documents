@@ -17,6 +17,9 @@
         "prosemirror-view": "^1.23.3"
     },
     "devDependencies": {
+        "@types/prosemirror-model": "^1.16.0",
+        "@types/prosemirror-state": "^1.2.8",
+        "@types/prosemirror-view": "^1.23.0",
         "vite": "^2.6.1"
     }
 }
