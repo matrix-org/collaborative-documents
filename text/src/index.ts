@@ -20,6 +20,7 @@ import { Schema, DOMParser } from "prosemirror-model";
 import { schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
 import { exampleSetup } from "prosemirror-example-setup";
+import { WidgetApi } from "matrix-widget-api";
 
 import "prosemirror-view/style/prosemirror.css";
 import "prosemirror-menu/style/menu.css";
@@ -43,3 +44,11 @@ const view = new EditorView(document.querySelector("#editor"), {
         view.updateState(newState)
     },
 });
+
+// Widget communication
+if (window.parent !== window) {
+    console.log("Starting widget API");
+    const widgetApi = new WidgetApi();
+    widgetApi.start();
+    widgetApi.sendContentLoaded();
+}
