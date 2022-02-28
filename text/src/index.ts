@@ -47,8 +47,9 @@ const view = new EditorView(document.querySelector("#editor"), {
 
 // Widget communication
 if (window.parent !== window) {
-    console.log("Starting widget API");
-    const widgetApi = new WidgetApi();
+    const widgetId = new URL(document.documentURI).searchParams.get("widgetId");
+    console.log(`Starting widget API (${widgetId})`);
+    const widgetApi = new WidgetApi(widgetId);
     widgetApi.start();
     widgetApi.sendContentLoaded();
 }
