@@ -29,7 +29,8 @@ import "./index.css";
 // Mix the nodes from prosemirror-schema-list into the basic schema to
 // create a schema with list support.
 const schema = window.schema = new Schema({
-    nodes: addListNodes(basicSchema.spec.nodes, "paragraph block*", "block"),
+    // TODO: Work out the best content type for list items
+    nodes: addListNodes(basicSchema.spec.nodes, "inline*", "block"),
     marks: basicSchema.spec.marks
 });
 
