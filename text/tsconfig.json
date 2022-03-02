@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es2020",
+        "outDir": "lib",
+        "declaration": true,
+        "moduleResolution": "node",
+        "strict": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "useDefineForClassFields": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "importsNotUsedAsValues": "error",
+    },
+}

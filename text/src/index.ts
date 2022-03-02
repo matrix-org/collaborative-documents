@@ -33,9 +33,11 @@ const mySchema = new Schema({
     marks: schema.spec.marks
 });
 
-const view = new EditorView(document.querySelector("#editor"), {
+const view = new EditorView(document.querySelector("#editor") as Element, {
     state: EditorState.create({
-        doc: DOMParser.fromSchema(mySchema).parse(document.querySelector("#content")),
+        doc: DOMParser.fromSchema(mySchema).parse(
+            document.querySelector("#content") as Element,
+        ),
         plugins: exampleSetup({ schema: mySchema }),
     }),
     dispatchTransaction(transaction) {
@@ -47,7 +49,9 @@ const view = new EditorView(document.querySelector("#editor"), {
 
 // Widget communication
 if (window.parent !== window) {
-    const widgetId = new URL(document.documentURI).searchParams.get("widgetId");
+    const widgetId =
+        new URL(document.documentURI).searchParams.get("widgetId") ||
+        undefined;
     console.log(`Starting widget API (${widgetId})`);
     const widgetApi = new WidgetApi(widgetId);
     widgetApi.start();
