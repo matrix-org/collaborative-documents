@@ -1,2 +1,1 @@
-Currently focusing on the [Patience](https://github.com/matrix-org/patience)
-test harness.
+Experimenting with a Matrix-native collaborative documents scheme.
