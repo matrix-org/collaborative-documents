@@ -17,7 +17,7 @@ limitations under the License.
 import { EditorState } from "prosemirror-state";
 import { EditorView } from "prosemirror-view";
 import { Schema, DOMParser } from "prosemirror-model";
-import { schema as basicSchema } from "prosemirror-schema-basic";
+import { schema as basicSchema, nodes, marks } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
 import { exampleSetup } from "prosemirror-example-setup";
 import { WidgetApi } from "matrix-widget-api";
@@ -26,8 +26,12 @@ import "prosemirror-view/style/prosemirror.css";
 import "prosemirror-menu/style/menu.css";
 import "./index.css";
 
+window.schemaSpec = {
+    nodes,
+    marks,
+};
+
 const schema = window.schema = new Schema({
-    // TODO: Work out the best content type for list items
     nodes: addListNodes(basicSchema.spec.nodes, "inline*", "block"),
     marks: basicSchema.spec.marks
 });

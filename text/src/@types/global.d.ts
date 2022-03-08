@@ -20,6 +20,7 @@ import type { Schema } from "prosemirror-model";
 
 declare global {
     interface Window {
+        schemaSpec?: object;
         schema?: Schema;
         state?: EditorState;
         view?: EditorView;
