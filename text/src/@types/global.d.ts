@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import type { EditorState } from "prosemirror-state";
+import type { EditorState, Transaction } from "prosemirror-state";
 import type { EditorView } from "prosemirror-view";
 import type { Schema } from "prosemirror-model";
 
@@ -24,5 +24,6 @@ declare global {
         schema?: Schema;
         state?: EditorState;
         view?: EditorView;
+        lastTransaction?: Transaction;
     }
 }
