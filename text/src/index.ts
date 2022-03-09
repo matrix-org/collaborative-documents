@@ -37,7 +37,7 @@ const schema = window.schema = new Schema({
 });
 
 const content = document.querySelector("#content") as Element;
-const state = window.state = EditorState.create({
+const state = EditorState.create({
     doc: DOMParser.fromSchema(schema).parse(content),
     plugins: exampleSetup({ schema }),
 });

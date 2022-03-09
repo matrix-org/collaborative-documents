@@ -22,7 +22,6 @@ declare global {
     interface Window {
         schemaSpec?: object;
         schema?: Schema;
-        state?: EditorState;
         view?: EditorView;
         lastTransaction?: Transaction;
     }
