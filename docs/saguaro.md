@@ -5,13 +5,13 @@
 
 ## Background
 
-Inspired by ideas in [Peritext](https://www.inkandswitch.com/peritext) and tree-focused CRDTs, we describe an intent-preserving collaboration algorithm for rich text documents modeled as some tree of nodes, such as the DOM tree from web platfom or the generic AST [proposed](/@jryans/collaborative-documents) for Matrix-native documents.
+Inspired by ideas in [Peritext](https://www.inkandswitch.com/peritext) and tree-focused CRDTs, we describe an intent-preserving collaboration algorithm for rich text documents modeled as some tree of nodes, such as the DOM tree from web platfom or the generic AST [proposed](collaborative-documents.md) for Matrix-native documents.
 
 ## Syntax
 
 While Saguaro itself is an abstract set of rules for capturing intent and resolving changes, it's easier to understand by showing examples in a concrete syntax.
 
-This document uses the [proposed change syntax](/@jryans/collaborative-documents#Changes) for Matrix-native collaborative documents:
+This document uses the [proposed change syntax](collaborative-documents.md#Changes) for Matrix-native collaborative documents:
 
 ```json
 {
@@ -62,7 +62,7 @@ As a document evolves over time, various changes events will have been composed 
 
 Many CRDT and similar algorithms use counters to establish an order of operations. 
 
-When [building on Matrix](/@jryans/collaborative-documents#Ordering), we can rely on the platform to supply [causally ordered](https://mattweidner.com/2022/02/10/collaborative-data-design.html#causal-order) streams of operations for each participating device. Matrix does not provide a global ordering of operations across multiple devices, so each collaboration algorithm is responsible for ensuring all devices end up with the same state.
+When [building on Matrix](collaborative-documents.md#Ordering), we can rely on the platform to supply [causally ordered](https://mattweidner.com/2022/02/10/collaborative-data-design.html#causal-order) streams of operations for each participating device. Matrix does not provide a global ordering of operations across multiple devices, so each collaboration algorithm is responsible for ensuring all devices end up with the same state.
 
 If there are multiple changes based on the same parent change, Saguaro orders them by device ID.
 

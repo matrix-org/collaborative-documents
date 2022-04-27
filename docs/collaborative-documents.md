@@ -372,7 +372,7 @@ Collaboration algorithms often operate by recreating document tree changes and m
 
 ### Example
 
-While specific algorithms are beyond the scope of this proposal, an [example algorithm](https://hackmd.io/@jryans/saguaro) (WIP) shows one possible approach.
+While specific algorithms are beyond the scope of this proposal, an [example algorithm](saguaro.md) (WIP) shows one possible approach.
 
 ## Snapshots
 
